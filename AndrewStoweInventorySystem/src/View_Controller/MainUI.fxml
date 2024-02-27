@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="1084.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.MainUIController">
+    <children>
+        <HBox layoutX="44.0" layoutY="101.0" prefHeight="292.0" prefWidth="1026.0" spacing="60.0">
+            <children>
+                <BorderPane>
+                    <bottom>
+                        <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <buttons>
+                                <Button fx:id="addPart" mnemonicParsing="false" onAction="#addPartClick" text="Add" />
+                                <Button fx:id="modifyPart" mnemonicParsing="false" onAction="#modifyPartClick" text="Modify" />
+                                <Button fx:id="deletePart" mnemonicParsing="false" onAction="#deletePartClick" text="Delete" />
+                            </buttons>
+                        </ButtonBar>
+                    </bottom>
+                    <top>
+                        <TitledPane contentDisplay="RIGHT" prefHeight="249.0" prefWidth="460.0" text="Parts" BorderPane.alignment="CENTER">
+                            <content>
+                                <TableView fx:id="partsTableView" prefHeight="211.0" prefWidth="433.0">
+                                    <columns>
+                                        <TableColumn fx:id="partIDColumn" prefWidth="75.0" text="Part ID" />
+                                        <TableColumn fx:id="partNameColumn" prefWidth="155.0" text="Part Name" />
+                                        <TableColumn fx:id="partInventoryColumn" prefWidth="99.0" text="Inventory Level" />
+                                        <TableColumn fx:id="partCostColumn" prefWidth="132.0" text="Price/ Cost per Unit" />
+                                    </columns>
+                                </TableView>
+                            </content>
+                            <graphic>
+                                <TextField fx:id="partSearch" onAction="#filterPartText" prefHeight="25.0" prefWidth="136.0" promptText="Search by Part ID or Name" translateX="250.0" />
+                            </graphic>
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </TitledPane>
+                    </top>
+                </BorderPane>
+                <BorderPane prefHeight="289.0" prefWidth="480.0">
+                    <bottom>
+                        <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <buttons>
+                                <Button fx:id="addProduct" mnemonicParsing="false" onAction="#addProductClick" text="Add" />
+                                <Button fx:id="modifyProduct" mnemonicParsing="false" onAction="#modifyProductClick" text="Modify" />
+                                <Button fx:id="deleteProduct" mnemonicParsing="false" onAction="#deleteProductClick" text="Delete" />
+                            </buttons>
+                        </ButtonBar>
+                    </bottom>
+                    <center>
+                        <TitledPane animated="false" contentDisplay="RIGHT" prefHeight="249.0" prefWidth="480.0" text="Products" BorderPane.alignment="CENTER">
+                            <graphic>
+                                <TextField fx:id="productSearch" onAction="#filterProductText" prefHeight="27.0" prefWidth="138.0" promptText="Search by Product ID or Name" translateX="250.0" />
+                            </graphic>
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                            <content>
+                                <TableView fx:id="productTableView" prefHeight="253.0" prefWidth="424.0">
+                                    <columns>
+                                        <TableColumn fx:id="productIDColumn" prefWidth="75.0" text="Product ID" />
+                                        <TableColumn fx:id="productNameColumn" prefWidth="156.0" text="Product Name" />
+                                        <TableColumn fx:id="productInventoryColumn" prefWidth="113.0" text="Inventory Level" />
+                                        <TableColumn fx:id="productCostColumn" prefWidth="134.0" text="Price/Cost per Unit" />
+                                    </columns>
+                                </TableView>
+                            </content>
+                        </TitledPane>
+                    </center>
+                </BorderPane>
+            </children>
+        </HBox>
+        <Button fx:id="exitButton" layoutX="913.0" layoutY="419.0" mnemonicParsing="false" onAction="#exitClick" text="Exit" />
+        <Label layoutX="54.0" layoutY="56.0" text="Inventory Management System">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+      <Label fx:id="errorLabel" layoutX="326.0" layoutY="504.0" prefHeight="17.0" prefWidth="402.0" />
+    </children>
+</AnchorPane>
