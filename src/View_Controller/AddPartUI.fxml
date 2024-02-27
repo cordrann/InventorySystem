@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="442.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.AddPartController">
+    <children>
+        <VBox prefHeight="255.0" prefWidth="100.0" spacing="27.0">
+            <children>
+                <Label text="Add Part">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="ID">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <Label text="Name">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <Label text="Inv">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <Label text="Price/Cost">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <Label text="Max">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="machComp" text="Machine ID">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+            </children>
+        </VBox>
+        <VBox layoutX="123.0" prefHeight="287.0" prefWidth="122.0" spacing="20.0">
+            <children>
+                <RadioButton fx:id="in_house" mnemonicParsing="false" onAction="#radioToggleInHouse" selected="true" text="In-House">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radio" />
+               </toggleGroup></RadioButton>
+                <TextField fx:id="id" editable="false" promptText="Auto Gen - Disabled" />
+                <TextField fx:id="name" />
+                <TextField fx:id="inventory" layoutX="10.0" layoutY="92.0" />
+                <TextField fx:id="cost" layoutX="10.0" layoutY="92.0" />
+                <TextField fx:id="max" layoutX="10.0" layoutY="182.0" />
+                <TextField fx:id="machineID_or_companyName" layoutX="10.0" layoutY="137.0" />
+            </children>
+        </VBox>
+        <VBox layoutX="259.0" prefHeight="255.0" prefWidth="207.0" spacing="200.0">
+            <children>
+                <RadioButton fx:id="outsourced" mnemonicParsing="false" onAction="#radioToggleOutSourced" text="Outsourced" toggleGroup="$radio" />
+                <HBox prefHeight="59.0" prefWidth="100.0" spacing="20.0">
+                    <children>
+                        <Label text="Min" />
+                        <TextField fx:id="min" prefWidth="100.0" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <ButtonBar layoutX="156.0" layoutY="316.0" prefHeight="40.0" prefWidth="200.0">
+            <buttons>
+                <Button fx:id="save" mnemonicParsing="false" onAction="#saveClick" text="Save" />
+                <Button fx:id="cancel" mnemonicParsing="false" onAction="#cancelCLick" text="Cancel" />
+            </buttons>
+        </ButtonBar>
+      <Label fx:id="errorLabel" layoutX="105.0" layoutY="401.0" prefHeight="17.0" prefWidth="237.0" />
+    </children>
+</AnchorPane>
